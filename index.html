@@ -1,6 +1,29 @@
-## 📊 Diagrama de Flujo del Menú
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Diagrama de Flujo - Menú</title>
 
-```mermaid
+<!-- Cargar Mermaid desde CDN -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+<script>
+    mermaid.initialize({ startOnLoad: true });
+</script>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<h2>Diagrama de Flujo del Menú</h2>
+
+<div class="mermaid">
 flowchart TD
     A[Inicio] --> B[Mostrar menú:<br/>1-Cargar imagen<br/>2-Redimensionar<br/>3-Ajustar contraste<br/>4-Aplicar filtros<br/>5-Boceto persona<br/>6-Salir]
     B --> C[Leer opción op]
@@ -37,3 +60,9 @@ flowchart TD
 
     D6 -->|Sí| E6[Mostrar: Saliendo del programa...] --> Z[Fin]
     D6 -->|No| E7[Mostrar: Opción inválida] --> B
+</div>
+
+</body>
+</html>
+
+
