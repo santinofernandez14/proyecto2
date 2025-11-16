@@ -1,43 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Diagrama de Flujo - Menú</title>
+
+<!-- Cargar Mermaid desde CDN -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+<script>
+    mermaid.initialize({ startOnLoad: true });
+</script>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<h2>Diagrama de Flujo del Menú</h2>
+
+<div class="mermaid">
 flowchart TD
+    A[Inicio] --> B[Mostrar menú:<br/>1-Cargar imagen<br/>2-Redimensionar<br/>3-Ajustar contraste<br/>4-Aplicar filtros<br/>5-Boceto persona<br/>6-Salir]
+    B --> C[Leer opción op]
 
-    A[Inicio] --> B[Mostrar menú]
-    B --> C[Leer opción ingresada]
+    C --> D1{op == 1?}
+    C --> D2{op == 2?}
+    C --> D3{op == 3?}
+    C --> D4{op == 4?}
+    C --> D5{op == 5?}
+    C --> D6{op == 6?}
 
-    %% --- OPCIÓN 1 --- %%
-    C --> D{op == "1"?}
-    D -->|Sí| D1[cargar_imagen()] --> B
-    D -->|No| E{op == "2"?}
+    D1 -->|Sí| E1[cargar_imagen<br/>Guardar ruta_imagen_cargada] --> B
+    D1 -->|No| C
 
-    %% --- OPCIÓN 2 --- %%
-    E -->|Sí| E1[verificar_imagen_cargada()]
-    E1 -->|Excepción| E2[Mostrar error: "Debe ejecutar primero la FUNCIÓN 1"] --> B
-    E1 -->|OK| E3[Pedir keyword (youtube / instagram / twitter / facebook)]
-    E3 --> E4[redimensionar_imagen(ruta_imagen_cargada, keyword)] --> B
-    E -->|No| F{op == "3"?}
+    D2 -->|Sí| E2[verificar_imagen_cargada]
+    E2 -->|Error| E2A[Mostrar: Debe ejecutar primero opción 1] --> B
+    E2 -->|OK| E2B[Pedir keyword:<br/>youtube/instagram/twitter/facebook] --> E2C[redimensionar_imagen] --> B
+    D2 -->|No| C
 
-    %% --- OPCIÓN 3 --- %%
-    F -->|Sí| F1[verificar_imagen_cargada()]
-    F1 -->|Excepción| F2[Mostrar error] --> B
-    F1 -->|OK| F3[ajustar_contraste(ruta_imagen_cargada)] --> B
-    F -->|No| G{op == "4"?}
+    D3 -->|Sí| E3[verificar_imagen_cargada]
+    E3 -->|Error| E3A[Mostrar error] --> B
+    E3 -->|OK| E3B[ajustar_contraste] --> B
+    D3 -->|No| C
 
-    %% --- OPCIÓN 4 --- %%
-    G -->|Sí| G1[verificar_imagen_cargada()]
-    G1 -->|Excepción| G2[Mostrar error] --> B
-    G1 -->|OK| G3[Pedir nombre del filtro]
-    G3 --> G4[aplicar_filtros(ruta_imagen_cargada, filtro)] --> B
-    G -->|No| H{op == "5"?}
+    D4 -->|Sí| E4[verificar_imagen_cargada]
+    E4 -->|Error| E4A[Mostrar error] --> B
+    E4 -->|OK| E4B[Pedir nombre del filtro] --> E4C[aplicar_filtros] --> B
+    D4 -->|No| C
 
-    %% --- OPCIÓN 5 --- %%
-    H -->|Sí| H1[verificar_imagen_cargada()]
-    H1 -->|Excepción| H2[Mostrar error] --> B
-    H1 -->|OK| H3[Preguntar: "¿La imagen contiene una persona? (s/n)"]
-    H3 --> H4[persona = (resp == "s")]
-    H4 --> H5[boceto_persona(ruta_imagen_cargada, persona, invertir=True)] --> B
-    H -->|No| I{op == "6"?}
+    D5 -->|Sí| E5[verificar_imagen_cargada]
+    E5 -->|Error| E5A[Mostrar error] --> B
+    E5 -->|OK| E5B[Preguntar: ¿Contiene persona? s/n] --> E5C[persona = resp==s] --> E5D[boceto_persona] --> B
+    D5 -->|No| C
 
-    %% --- OPCIÓN 6 --- %%
-    I -->|Sí| I1[Mostrar "Saliendo del programa..."] --> J[Fin]
-    I -->|No| K[Mostrar "Opción inválida"] --> B
+    D6 -->|Sí| E6[Mostrar: Saliendo del programa...] --> Z[Fin]
+    D6 -->|No| E7[Mostrar: Opción inválida] --> B
+</div>
+
+</body>
+</html>
 
 
