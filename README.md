@@ -1,4 +1,4 @@
-## 📊 Diagrama de Flujo del Menú
+## Diagrama de Flujo del Menú
 
 ```mermaid
 flowchart TD
