@@ -10,8 +10,8 @@ flowchart TD
 
     %% --- OPCIÓN 2 --- %%
     E -->|Sí| E1[verificar_imagen_cargada()]
-    E1 -->|Excepción| E2[Mostrar error<br/>"Debe ejecutar primero la FUNCIÓN 1"] --> B
-    E1 -->|OK| E3[Pedir keyword<br/>(youtube / instagram / twitter / facebook)]
+    E1 -->|Excepción| E2[Mostrar error: "Debe ejecutar primero la FUNCIÓN 1"] --> B
+    E1 -->|OK| E3[Pedir keyword (youtube / instagram / twitter / facebook)]
     E3 --> E4[redimensionar_imagen(ruta_imagen_cargada, keyword)] --> B
     E -->|No| F{op == "3"?}
 
@@ -31,7 +31,7 @@ flowchart TD
     %% --- OPCIÓN 5 --- %%
     H -->|Sí| H1[verificar_imagen_cargada()]
     H1 -->|Excepción| H2[Mostrar error] --> B
-    H1 -->|OK| H3[Preguntar<br/>"¿La imagen contiene una persona? (s/n)"]
+    H1 -->|OK| H3[Preguntar: "¿La imagen contiene una persona? (s/n)"]
     H3 --> H4[persona = (resp == "s")]
     H4 --> H5[boceto_persona(ruta_imagen_cargada, persona, invertir=True)] --> B
     H -->|No| I{op == "6"?}
@@ -39,4 +39,5 @@ flowchart TD
     %% --- OPCIÓN 6 --- %%
     I -->|Sí| I1[Mostrar "Saliendo del programa..."] --> J[Fin]
     I -->|No| K[Mostrar "Opción inválida"] --> B
+
 
