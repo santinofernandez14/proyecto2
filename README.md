@@ -1,20 +1,20 @@
  ## PROYECTO 2
 
-```
+
 
 ### GRUPO
 
-```
+
 
 ### Almirón, Sebastián
 ### Fernández, Santino
 ### Infante, Sebastián
 
- ```
+ 
 
 ### PARTE 1
 
-```
+
 
 ## Diagrama de Flujo del Menú
 
