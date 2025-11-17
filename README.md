@@ -131,5 +131,5 @@ Las métricas de desempeño (R², MSE, RMSE, MAE) son **muy similares** entre el
 
 Sin embargo, la similitud en los valores bajos de R² en ambos conjuntos sugiere que el modelo es **demasiado simple (underfitting)** para capturar la complejidad subyacente de los datos. El modelo es estable, pero su capacidad predictiva es limitada.
 
-### Conclusión Final
+## Conclusión Final
 El modelo de Regresión Lineal Múltiple desarrollado es **estable y generaliza bien** a datos nuevos, pero su **capacidad predictiva es baja** debido a la simplicidad de las features utilizadas.
