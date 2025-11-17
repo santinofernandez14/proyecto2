@@ -1,14 +1,20 @@
-## PROYECTO 2
+ ## PROYECTO 2
 
-###GRUPO
-###Almirón, Sebastián
-###Fernández, Santino
-###Infante, Sebastián
+```
+
+### GRUPO
+
+```
+
+### Almirón, Sebastián
+### Fernández, Santino
+### Infante, Sebastián
+
+ ```
 
 ### PARTE 1
 
-### Archivo de pruebas de fotoapp.py
-
+```
 
 ## Diagrama de Flujo del Menú
 
