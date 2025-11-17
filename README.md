@@ -1,10 +1,7 @@
  ## PROYECTO 2
 
 
-
-### GRUPO
-
-
+## GRUPO
 
 ### Almirón, Sebastián
 ### Fernández, Santino
@@ -12,7 +9,7 @@
 
  
 
-### PARTE 1
+## PARTE 1
 
 
 
